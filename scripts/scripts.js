@@ -1,31 +1,46 @@
 import { url } from "../helpers/contants.js";
 import { GetData } from "../helpers/peticiones.js";
+import { NoView, ViewMovie } from "./viewMovie.js";
 
-const template = document.getElementById("template").content;
-const containers = document.getElementById("ContainersCards");
+//--------------Nav---------------//
+let btnTodas = document.getElementById("btnTodas");
+let btnMas = document.getElementById("btnMas");
+let btnMenos = document.getElementById("btnMenos");
 
+//-------------Search--------------//
+let form = document.querySelector("form");
+let search = document.getElementById("search");
+
+//-------------Carga Principal------------//
 document.addEventListener("DOMContentLoaded", async () => {
-  const response = await GetData(url);
-
-  let fragment = document.createDocumentFragment();
-  //--------Pintar las Card-----------//
-  response.forEach((item) => {
-    const {
-      id,
-      Carrusel,
-      Description,
-      Poster,
-      Title,
-      Trailer,
-      Type,
-      Value,
-      Year,
-    } = item;
-    console.log(Carrusel, Poster);
-    template.querySelector("img").setAttribute("src", Poster);
-    template.querySelector("img").setAttribute("alt", Type);
-    const clone = template.cloneNode(true);
-    fragment.appendChild(clone);
+  btnTodas.addEventListener("click", async () => {
+    const response = await GetData(url);
+    ViewMovie(response);
   });
-  containers.appendChild(fragment);
+
+  btnMas.addEventListener("click", async () => {
+    const response = await GetData(url);
+    const respMas = await response.filter((fi) => fi.Value >= 8);
+    ViewMovie(respMas);
+  });
+
+  btnMenos.addEventListener("click", async () => {
+    const response = await GetData(url);
+    const respMenos = await response.filter((fi) => fi.Value < 8);
+    ViewMovie(respMenos);
+  });
+});
+
+//------------Busqueda del NavBar-----------//
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const response = await GetData(url);
+  const respSearch = await response.filter((fi) =>
+    fi.Title.toLocaleLowerCase().includes(search.value.toLocaleLowerCase())
+  );
+  if (respSearch.length > 0) {
+    ViewMovie(respSearch);
+  } else {
+    NoView(search.value);
+  }
 });

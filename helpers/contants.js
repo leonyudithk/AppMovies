@@ -1,1 +1,1 @@
-export const url = "https://api-movies-yl.vercel.app/movies";
+export const url = "https://movies-yl-2.vercel.app/movies";

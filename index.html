@@ -14,60 +14,42 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar  bg-dark  navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://res.cloudinary.com/danimel/image/upload/v1702668656/Netflix/logo-blockBuster_hizdnn.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <button class="btnNav" id="btnTodas" type="button">Todas</button>            
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+            <button class="btnNav" id="btnMas" type="button">Más Valoradas</button>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
+                <li class="nav-item">
+           <button class="btnNav" id="btnMenos" type="button">Menos Valoradas</button>
+            </li>           
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
+           
           </ul>
           <form class="d-flex" role="search">
             <input
-              class="form-control me-2"
+             id="search"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
-              Search
+            <button class="btn btnSearch" type="submit">
+               <img
+            src="https://res.cloudinary.com/danimel/image/upload/v1702669943/Netflix/Vector_1_vcrqis.png"
+            class="d-block w-100"
+            alt="..."
+          />             
             </button>
           </form>
         </div>
@@ -105,6 +87,18 @@
             class="d-block w-100"
             alt="..."
           />
+          <button type="button" class="btnVerYa"> 
+            <img
+            src="https://res.cloudinary.com/danimel/image/upload/v1702675842/Netflix/Vector_2_qkj4jl.png"
+            class="w-20"
+            alt="..."
+          /> VER AHORA</button>
+          <button type="button" class="btnVerLuego"> 
+            <img
+            src="https://res.cloudinary.com/danimel/image/upload/v1702675842/Netflix/Vector_3_l38d7f.png"
+            class="w-20"
+            alt="..."
+          /> VER DESPUÉS</button>
         </div>
         <div class="carousel-item">
           <img
@@ -112,6 +106,8 @@
             class="d-block w-100"
             alt="..."
           />
+            <button type="button" class="btnVerYa"> > VER AHORA</button>
+          <button type="button" class="btnVerLuego"> + VER DESPUÉS</button>
         </div>
         <div class="carousel-item">
           <img
@@ -119,6 +115,8 @@
             class="d-block w-100"
             alt="..."
           />
+            <button type="button" class="btnVerYa"> > VER AHORA</button>
+          <button type="button" class="btnVerLuego"> + VER DESPUÉS</button>
         </div>
       </div>
       <button
@@ -142,17 +140,28 @@
     </div>
 
     <!--  Cards -->
-    <div class="container-fluid" id="ContainersCards">
+    <div class="container row" id="ContainersCards">
       <template id="template">
-        <div class="card" style="width: 18rem">
+         <div class="col-12 mb-3 col-md-2">
+        <div class="card" style="width: 10rem">
           <img src="..." class="card-img-top" alt="..." />
-          <div class="card-body">
-            <p class="card-text">
+          <!-- <div class="card-body">
+           <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
-            </p>
-          </div>
+            </p> 
+          </div> -->
         </div>
+        </div>
+      </template>
+
+      <template id="template2">     
+        <center>
+        <div class="card" style="width: 25rem">
+          <img src="..." class="card-img-top" alt="..." /> 
+          <h1></h1>       
+        </div>   
+        </center>
       </template>
     </div>
 

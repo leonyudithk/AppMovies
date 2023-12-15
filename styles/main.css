@@ -3,3 +3,94 @@ body {
   background: black;
   color: white;
 }
+
+.btnNav {
+  background: none;
+  font-weight: 700;
+  color: fff !important;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+  margin-left: 25px;
+}
+
+.btnNav:hover {
+  background: black;
+  color: #fed941;
+  text-decoration: underline;
+}
+
+.btnSearch {
+  background: #fed941;
+  color: black;
+  border: none;
+  border-radius: 0 8px 8px 0;
+}
+
+#search {
+  background: #fff;
+  color: black;
+  padding: 10px;
+  width: 500px;
+  height: auto;
+  border-radius: 8px 0 0 8px;
+}
+#ContainersCards {
+  margin: 25px;
+  background: black;
+}
+
+.card {
+  margin: 2px !important;
+}
+
+.carousel {
+  margin: 25px;
+}
+
+.btnVerYa {
+  position: absolute;
+  top: 75%;
+  left: 8%;
+  font-size: bold;
+  font-weight: 600;
+  background-color: #fed941;
+  color: black;
+  padding: 10px 20px;
+  border-color: #fed941;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnVerYa:hover {
+  color: #fed941;
+  background-color: black;
+  padding: 10px 20px;
+  border-color: #fed941;
+  border-radius: 5px;
+}
+.btnVerLuego {
+  position: absolute;
+  top: 75%;
+  left: 20%;
+  font-size: bold;
+  font-weight: 600;
+  color: #fed941;
+  background-color: black;
+  padding: 10px 20px;
+  border-color: #fed941;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnVerLuego:hover {
+  background-color: #fed941;
+  color: black;
+  padding: 10px 20px;
+  border-color: #fed941;
+  border-radius: 5px;
+}
+
+.navbar {
+  background-color: black !important;
+}
