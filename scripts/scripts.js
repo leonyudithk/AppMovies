@@ -1,11 +1,12 @@
 import { url } from "../helpers/contants.js";
 import { GetData } from "../helpers/peticiones.js";
-import { NoView, ViewMovie } from "./viewMovie.js";
+import { NoView, RegisterMovie, ViewMovie } from "./viewMovie.js";
 
 //--------------Nav---------------//
 let btnTodas = document.getElementById("btnTodas");
 let btnMas = document.getElementById("btnMas");
 let btnMenos = document.getElementById("btnMenos");
+let btnRegistrar = document.getElementById("btnRegistrar");
 
 //-------------Search--------------//
 let form = document.querySelector("form");
@@ -28,6 +29,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const response = await GetData(url);
     const respMenos = await response.filter((fi) => fi.Value < 8);
     ViewMovie(respMenos);
+  });
+
+  btnRegistrar.addEventListener("click", async () => {
+    RegisterMovie()
   });
 });
 
