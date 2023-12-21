@@ -22,7 +22,7 @@ export const putData = async (url, datos) => {
   }
 };
 
-
+// `${url}/${id}
 export const deleteData = async (url) => {
   try {
     await axios.delete(url, datos);
