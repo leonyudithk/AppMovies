@@ -145,5 +145,14 @@ containers.addEventListener("submit", async (event) => {
     id: Math.round(Math.random() * (1000 - 1) + 1).toString(),
   };
 
-  PostData(url, obj);
+  await PostData(url, obj);
+
+  document.getElementById("title").value = "";
+  document.getElementById("carrusel").value = "";
+  document.getElementById("poster").value = "";
+  document.getElementById("descripcion").value = "";
+  document.getElementById("trailer").value = "";
+  document.getElementById("year").value = "";
+  document.getElementById("valor").value = "";
+  document.getElementById("tipo").value = "";
 });
